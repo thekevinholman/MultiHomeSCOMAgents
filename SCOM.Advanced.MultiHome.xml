@@ -1,0 +1,772 @@
+﻿<?xml version="1.0" encoding="utf-8"?><ManagementPack ContentReadable="true" SchemaVersion="2.0" OriginalSchemaVersion="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <Manifest>
+    <Identity>
+      <ID>SCOM.Advanced.MultiHome</ID>
+      <Version>1.0.0.2</Version>
+    </Identity>
+    <Name>SCOM.Advanced.MultiHome</Name>
+    <References>
+      <Reference Alias="Windows">
+        <ID>Microsoft.Windows.Library</ID>
+        <Version>7.5.8501.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="System">
+        <ID>System.Library</ID>
+        <Version>7.5.8501.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="SC">
+        <ID>Microsoft.SystemCenter.Library</ID>
+        <Version>7.0.8433.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="Health">
+        <ID>System.Health.Library</ID>
+        <Version>7.0.8433.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="MSIL">
+        <ID>Microsoft.SystemCenter.InstanceGroup.Library</ID>
+        <Version>7.5.8501.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+    </References>
+  </Manifest>
+  <TypeDefinitions>
+    <EntityTypes>
+      <ClassTypes>
+        <ClassType ID="SCOM.Advanced.MultiHome.Group1.SQLBased.Group" Accessibility="Public" Abstract="false" Base="MSIL!Microsoft.SystemCenter.InstanceGroup" Hosted="false" Singleton="true" Extension="false" />
+		<ClassType ID="SCOM.Advanced.MultiHome.Group2.SQLBased.Group" Accessibility="Public" Abstract="false" Base="MSIL!Microsoft.SystemCenter.InstanceGroup" Hosted="false" Singleton="true" Extension="false" />
+		<ClassType ID="SCOM.Advanced.MultiHome.Group3.SQLBased.Group" Accessibility="Public" Abstract="false" Base="MSIL!Microsoft.SystemCenter.InstanceGroup" Hosted="false" Singleton="true" Extension="false" />
+		<ClassType ID="SCOM.Advanced.MultiHome.Group4.SQLBased.Group" Accessibility="Public" Abstract="false" Base="MSIL!Microsoft.SystemCenter.InstanceGroup" Hosted="false" Singleton="true" Extension="false" />
+		<ClassType ID="SCOM.Advanced.MultiHome.Group5.SQLBased.Group" Accessibility="Public" Abstract="false" Base="MSIL!Microsoft.SystemCenter.InstanceGroup" Hosted="false" Singleton="true" Extension="false" />
+		<ClassType ID="SCOM.Advanced.MultiHome.Group6.SQLBased.Group" Accessibility="Public" Abstract="false" Base="MSIL!Microsoft.SystemCenter.InstanceGroup" Hosted="false" Singleton="true" Extension="false" />
+		<ClassType ID="SCOM.Advanced.MultiHome.Group7.SQLBased.Group" Accessibility="Public" Abstract="false" Base="MSIL!Microsoft.SystemCenter.InstanceGroup" Hosted="false" Singleton="true" Extension="false" />	
+		<ClassType ID="SCOM.Advanced.MultiHome.Group8.SQLBased.Group" Accessibility="Public" Abstract="false" Base="MSIL!Microsoft.SystemCenter.InstanceGroup" Hosted="false" Singleton="true" Extension="false" />		
+      </ClassTypes>
+      <RelationshipTypes>
+        <RelationshipType ID="SCOM.Advanced.MultiHome.Group1.SQLBased.Group.Contains.Windows.Computers" Accessibility="Internal" Abstract="false" Base="System!System.Containment">
+          <Source ID="SCOM.Advanced.MultiHome.Group1.SQLBased.Group.Rel.Source" MinCardinality="0" MaxCardinality="2147483647" Type="SCOM.Advanced.MultiHome.Group1.SQLBased.Group" />
+          <Target ID="SCOM.Advanced.MultiHome.Group1.SQLBased.Group.Rel.Target" MinCardinality="0" MaxCardinality="2147483647" Type="Windows!Microsoft.Windows.Computer" />
+		</RelationshipType>		  
+        <RelationshipType ID="SCOM.Advanced.MultiHome.Group2.SQLBased.Group.Contains.Windows.Computers" Accessibility="Internal" Abstract="false" Base="System!System.Containment">
+          <Source ID="SCOM.Advanced.MultiHome.Group2.SQLBased.Group.Rel.Source" MinCardinality="0" MaxCardinality="2147483647" Type="SCOM.Advanced.MultiHome.Group2.SQLBased.Group" />
+          <Target ID="SCOM.Advanced.MultiHome.Group2.SQLBased.Group.Rel.Target" MinCardinality="0" MaxCardinality="2147483647" Type="Windows!Microsoft.Windows.Computer" />
+		</RelationshipType>	
+		<RelationshipType ID="SCOM.Advanced.MultiHome.Group3.SQLBased.Group.Contains.Windows.Computers" Accessibility="Internal" Abstract="false" Base="System!System.Containment">
+          <Source ID="SCOM.Advanced.MultiHome.Group3.SQLBased.Group.Rel.Source" MinCardinality="0" MaxCardinality="2147483647" Type="SCOM.Advanced.MultiHome.Group3.SQLBased.Group" />
+          <Target ID="SCOM.Advanced.MultiHome.Group3.SQLBased.Group.Rel.Target" MinCardinality="0" MaxCardinality="2147483647" Type="Windows!Microsoft.Windows.Computer" />
+		</RelationshipType>	
+		<RelationshipType ID="SCOM.Advanced.MultiHome.Group4.SQLBased.Group.Contains.Windows.Computers" Accessibility="Internal" Abstract="false" Base="System!System.Containment">
+          <Source ID="SCOM.Advanced.MultiHome.Group4.SQLBased.Group.Rel.Source" MinCardinality="0" MaxCardinality="2147483647" Type="SCOM.Advanced.MultiHome.Group4.SQLBased.Group" />
+          <Target ID="SCOM.Advanced.MultiHome.Group4.SQLBased.Group.Rel.Target" MinCardinality="0" MaxCardinality="2147483647" Type="Windows!Microsoft.Windows.Computer" />
+		</RelationshipType>	
+		<RelationshipType ID="SCOM.Advanced.MultiHome.Group5.SQLBased.Group.Contains.Windows.Computers" Accessibility="Internal" Abstract="false" Base="System!System.Containment">
+          <Source ID="SCOM.Advanced.MultiHome.Group5.SQLBased.Group.Rel.Source" MinCardinality="0" MaxCardinality="2147483647" Type="SCOM.Advanced.MultiHome.Group5.SQLBased.Group" />
+          <Target ID="SCOM.Advanced.MultiHome.Group5.SQLBased.Group.Rel.Target" MinCardinality="0" MaxCardinality="2147483647" Type="Windows!Microsoft.Windows.Computer" />
+		</RelationshipType>	
+		<RelationshipType ID="SCOM.Advanced.MultiHome.Group6.SQLBased.Group.Contains.Windows.Computers" Accessibility="Internal" Abstract="false" Base="System!System.Containment">
+          <Source ID="SCOM.Advanced.MultiHome.Group6.SQLBased.Group.Rel.Source" MinCardinality="0" MaxCardinality="2147483647" Type="SCOM.Advanced.MultiHome.Group6.SQLBased.Group" />
+          <Target ID="SCOM.Advanced.MultiHome.Group6.SQLBased.Group.Rel.Target" MinCardinality="0" MaxCardinality="2147483647" Type="Windows!Microsoft.Windows.Computer" />
+		</RelationshipType>	
+		<RelationshipType ID="SCOM.Advanced.MultiHome.Group7.SQLBased.Group.Contains.Windows.Computers" Accessibility="Internal" Abstract="false" Base="System!System.Containment">
+          <Source ID="SCOM.Advanced.MultiHome.Group7.SQLBased.Group.Rel.Source" MinCardinality="0" MaxCardinality="2147483647" Type="SCOM.Advanced.MultiHome.Group7.SQLBased.Group" />
+          <Target ID="SCOM.Advanced.MultiHome.Group7.SQLBased.Group.Rel.Target" MinCardinality="0" MaxCardinality="2147483647" Type="Windows!Microsoft.Windows.Computer" />
+		</RelationshipType>	
+	    <RelationshipType ID="SCOM.Advanced.MultiHome.Group8.SQLBased.Group.Contains.Windows.Computers" Accessibility="Internal" Abstract="false" Base="System!System.Containment">
+          <Source ID="SCOM.Advanced.MultiHome.Group8.SQLBased.Group.Rel.Source" MinCardinality="0" MaxCardinality="2147483647" Type="SCOM.Advanced.MultiHome.Group8.SQLBased.Group" />
+          <Target ID="SCOM.Advanced.MultiHome.Group8.SQLBased.Group.Rel.Target" MinCardinality="0" MaxCardinality="2147483647" Type="Windows!Microsoft.Windows.Computer" />
+		</RelationshipType>			
+      </RelationshipTypes>
+    </EntityTypes>
+    <ModuleTypes>
+      <DataSourceModuleType ID="SCOM.Advanced.MultiHome.SQLBased.Group.Discovery.DataSource" Accessibility="Internal" Batching="false">
+        <Configuration>
+		  <xsd:element minOccurs="1" type="xsd:integer" name="IntervalSeconds" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+		  <xsd:element minOccurs="0" type="xsd:string" name="SyncTime" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+		  <xsd:element minOccurs="1" type="xsd:string" name="GroupID" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+		  <xsd:element minOccurs="1" type="xsd:integer" name="StartNumber" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+		  <xsd:element minOccurs="1" type="xsd:integer" name="EndNumber" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+		  <xsd:element minOccurs="1" type="xsd:integer" name="TimeoutSeconds" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />		  
+        </Configuration>
+        <OverrideableParameters>
+		  <OverrideableParameter ID="IntervalSeconds" Selector="$Config/IntervalSeconds$" ParameterType="int" />
+		  <OverrideableParameter ID="SyncTime" Selector="$Config/SyncTime$" ParameterType="string" />
+		  <OverrideableParameter ID="TimeoutSeconds" Selector="$Config/TimeoutSeconds$" ParameterType="int" />
+        </OverrideableParameters>
+        <ModuleImplementation Isolation="Any">
+          <Composite>
+            <MemberModules>
+              <DataSource ID="Scheduler" TypeID="System!System.Scheduler">
+                <Scheduler>
+                  <SimpleReccuringSchedule>
+                    <Interval Unit="Seconds">$Config/IntervalSeconds$</Interval>
+					<SyncTime>$Config/SyncTime$</SyncTime>
+                  </SimpleReccuringSchedule>
+                  <ExcludeDates />
+                </Scheduler>
+              </DataSource>
+              <ProbeAction ID="PA" TypeID="Windows!Microsoft.Windows.PowerShellDiscoveryProbe">
+                <ScriptName>SCOM.Advanced.MultiHome.SQLBased.Group.Discovery.DataSource.ps1</ScriptName>
+                <ScriptBody>
+#=================================================================================
+#  Group Population script based on SQL Query
+#  Your query should return a list of FQDN names only
+#
+#  Kevin Holman
+#  v1.2
+#=================================================================================
+param($SourceID, $ManagedEntityID, [string]$GroupID, [int]$StartNumber, [int]$EndNumber)
+
+
+# Manual Testing section - put stuff here for manually testing script - typically parameters:
+#=================================================================================
+# $SourceId = '{00000000-0000-0000-0000-000000000000}'
+# $ManagedEntityId = '{00000000-0000-0000-0000-000000000000}'
+# [string]$GroupID = "Group1"
+# [int]$StartNumber = 1
+# [int]$EndNumber = 3
+#=================================================================================
+
+
+# Constants section - modify stuff here:
+#=================================================================================
+# Assign script name variable for use in event logging
+$ScriptName = "SCOM.Advanced.MultiHome.SQLBased.Group.Discovery.DataSource.ps1"
+$EventID = "7501"
+
+$SQLQuery = "SELECT ROW_NUMBER() OVER(ORDER BY PrincipalName) AS RowNumber, PrincipalName FROM MTV_HealthService WHERE IsAgent = 1"
+#=================================================================================
+
+
+# Starting Script section
+#=================================================================================
+# Gather the start time of the script
+$StartTime = Get-Date
+# Load MOMScript API
+$momapi = New-Object -comObject MOM.ScriptAPI
+# Load SCOM Discovery module
+$DiscoveryData = $momapi.CreateDiscoveryData(0, $SourceId, $ManagedEntityId)
+#Set variables to be used in logging events
+$whoami = whoami
+#Log script event that we are starting task
+$momapi.LogScriptEvent($ScriptName,$EventID,0,"`n Script is starting for Group ID: ($GroupID). `n Running as ($whoami).")
+#=================================================================================
+
+
+# Connect to local SCOM Management Group Section
+#=================================================================================
+# Clear any previous errors
+$Error.Clear()
+# Import the OperationsManager module and connect to the management group
+$SCOMPowerShellKey = "HKLM:\SOFTWARE\Microsoft\System Center Operations Manager\12\Setup\Powershell\V2"
+$SCOMModulePath = Join-Path (Get-ItemProperty $SCOMPowerShellKey).InstallDirectory "OperationsManager"
+Import-module $SCOMModulePath
+New-DefaultManagementGroupConnection "localhost"
+IF ($Error) 
+{ 
+  $momapi.LogScriptEvent($ScriptName,$EventID,1,"`n FATAL ERROR: Failure loading OperationsManager module or unable to connect to the management server. `n Terminating script. `n Error is: ($Error).")
+  EXIT
+}
+#=================================================================================
+
+
+# Begin MAIN script section
+#=================================================================================
+#Get SQLServer from Registry
+$SCOMKey = "HKLM:\SOFTWARE\Microsoft\Microsoft Operations Manager\3.0\Setup"
+$SQLServer = (Get-ItemProperty $SCOMKey).DatabaseServerName
+$SQLDBName = (Get-ItemProperty $SCOMKey).DatabaseName
+
+#Log event for captured parameters
+$momapi.LogScriptEvent($ScriptName,$EventID,0,"`n Group ID: ($GroupID) `n StartNumber: ($StartNumber) `n EndNumber: ($EndNumber) `n SQLServer: ($SQLServer) `n SQLDatabase: ($SQLDBName). `n SQL Query: ($SQLQuery).")
+
+
+# Connect to and then Query the database
+$SqlConnection = New-Object System.Data.SqlClient.SqlConnection
+$SqlConnection.ConnectionString = "Server=$SQLServer;Database=$SQLDBName;Integrated Security=True"
+$SqlCmd = New-Object System.Data.SqlClient.SqlCommand
+$SqlCmd.CommandText = $SqlQuery
+$SqlCmd.Connection = $SqlConnection
+$SqlAdapter = New-Object System.Data.SqlClient.SqlDataAdapter
+$SqlAdapter.SelectCommand = $SqlCmd
+$ds = New-Object System.Data.DataSet
+$SqlAdapter.Fill($ds) | Out-Null
+$SqlConnection.Close()
+
+# Check for errors connecting to SQL
+IF ($Error)
+{
+  $momapi.LogScriptEvent($ScriptName,$EventID,1,"`n FATAL ERROR:  There was an attempting to connect to and query SQL. `n Terminating script. `n Error is: ($Error).")
+  EXIT  
+}
+
+# Set the output to a variable
+[array]$Rows = $ds.Tables[0]
+$RowsCount = $Rows.Count
+
+IF ($RowsCount -ge 1)
+{
+  $momapi.LogScriptEvent($ScriptName,$EventID,0,"`n Successfully collected ($RowsCount) records from the SQL query.")
+}
+ELSE
+{
+  $momapi.LogScriptEvent($ScriptName,$EventID,1,"`n FATAL ERROR:  There was an error getting records from SQL or no records were returned. `n Number of objects returned: ($RowsCount). `n Terminating script.")
+  EXIT
+}
+
+# Set namelist array to empty
+[array]$NameList = @()
+
+# Loop through each Name from SQL and build an array of FQDN hostnames
+FOREACH ($Row in $Rows)
+{
+  IF ($Row.RowNumber -ge $StartNumber -and $Row.RowNumber -le $EndNumber)
+  {
+    #Get DNS Computer Name from SQL output
+    [string]$DNSComputerName = $Row.PrincipalName
+    $NameList += $DNSComputerName
+  }
+}
+$NameListCount = $NameList.Count
+$momapi.LogScriptEvent($ScriptName,$EventID,0,"`n Adding ($NameListCount) Computers to the Group ID: ($GroupID)")
+
+## Discovery Section
+# Switch the GroupID to the correct MPElement for discovery of the correct group and relationship
+$GroupMPElement = switch($GroupID)
+{
+  "Group1" {"$MPElement[Name='SCOM.Advanced.MultiHome.Group1.SQLBased.Group']$"}
+  "Group2" {"$MPElement[Name='SCOM.Advanced.MultiHome.Group2.SQLBased.Group']$"}
+  "Group3" {"$MPElement[Name='SCOM.Advanced.MultiHome.Group3.SQLBased.Group']$"}
+  "Group4" {"$MPElement[Name='SCOM.Advanced.MultiHome.Group4.SQLBased.Group']$"}
+  "Group5" {"$MPElement[Name='SCOM.Advanced.MultiHome.Group5.SQLBased.Group']$"}
+  "Group6" {"$MPElement[Name='SCOM.Advanced.MultiHome.Group6.SQLBased.Group']$"}
+  "Group7" {"$MPElement[Name='SCOM.Advanced.MultiHome.Group7.SQLBased.Group']$"}
+  "Group8" {"$MPElement[Name='SCOM.Advanced.MultiHome.Group8.SQLBased.Group']$"}
+}
+$RelationshipMPElement = switch($GroupID)
+{
+  "Group1" {"$MPElement[Name='SCOM.Advanced.MultiHome.Group1.SQLBased.Group.Contains.Windows.Computers']$"}
+  "Group2" {"$MPElement[Name='SCOM.Advanced.MultiHome.Group2.SQLBased.Group.Contains.Windows.Computers']$"}
+  "Group3" {"$MPElement[Name='SCOM.Advanced.MultiHome.Group3.SQLBased.Group.Contains.Windows.Computers']$"}
+  "Group4" {"$MPElement[Name='SCOM.Advanced.MultiHome.Group4.SQLBased.Group.Contains.Windows.Computers']$"}
+  "Group5" {"$MPElement[Name='SCOM.Advanced.MultiHome.Group5.SQLBased.Group.Contains.Windows.Computers']$"}
+  "Group6" {"$MPElement[Name='SCOM.Advanced.MultiHome.Group6.SQLBased.Group.Contains.Windows.Computers']$"}
+  "Group7" {"$MPElement[Name='SCOM.Advanced.MultiHome.Group7.SQLBased.Group.Contains.Windows.Computers']$"}
+  "Group8" {"$MPElement[Name='SCOM.Advanced.MultiHome.Group8.SQLBased.Group.Contains.Windows.Computers']$"}
+}
+
+$GroupInstance = $DiscoveryData.CreateClassInstance($GroupMPElement)
+
+# Loop through each SCOM computer and add a group membership containment relationship to the discovery data
+FOREACH ($Name in $NameList)
+{
+  $ServerInstance = $DiscoveryData.CreateClassInstance("$MPElement[Name='Windows!Microsoft.Windows.Computer']$")
+  $ServerInstance.AddProperty("$MPElement[Name='Windows!Microsoft.Windows.Computer']/PrincipalName$", $Name) 
+  $RelationshipInstance = $DiscoveryData.CreateRelationshipInstance($RelationshipMPElement)
+  $RelationshipInstance.Source = $GroupInstance
+  $RelationshipInstance.Target = $ServerInstance
+  $DiscoveryData.AddInstance($RelationshipInstance)   
+}
+
+# Return Discovery Items Normally           
+ $DiscoveryData
+
+# Return Discovery Bag to the command line for testing (does not work from ISE)
+# $momapi.Return($DiscoveryData)
+#=================================================================================
+# End MAIN script section
+
+
+# End of script section
+#=================================================================================
+#Log an event for script ending and total execution time.
+$EndTime = Get-Date
+$ScriptTime = ($EndTime - $StartTime).TotalSeconds
+$momapi.LogScriptEvent($ScriptName,$EventID,0,"`n Script Ending for Group ID: ($GroupID). `n Script Runtime: ($ScriptTime) seconds.")
+#=================================================================================
+#End Script
+                </ScriptBody>
+			    <Parameters>
+				  <Parameter>
+				    <Name>SourceId</Name>
+				    <Value>$MPElement$</Value>
+				  </Parameter>
+				  <Parameter>
+				    <Name>ManagedEntityId</Name>
+				    <Value>$Target/Id$</Value>
+				  </Parameter>
+				  <Parameter>
+				    <Name>GroupID</Name>
+				    <Value>$Config/GroupID$</Value>
+				  </Parameter>
+				  <Parameter>
+				    <Name>StartNumber</Name>
+				    <Value>$Config/StartNumber$</Value>
+				  </Parameter>
+				  <Parameter>
+				    <Name>EndNumber</Name>
+				    <Value>$Config/EndNumber$</Value>
+				  </Parameter>				  
+			    </Parameters>				
+                <TimeoutSeconds>$Config/TimeoutSeconds$</TimeoutSeconds>
+              </ProbeAction>
+            </MemberModules>
+            <Composition>
+              <Node ID="PA">
+                <Node ID="Scheduler" />
+              </Node>
+            </Composition>
+          </Composite>
+        </ModuleImplementation>
+        <OutputType>System!System.Discovery.Data</OutputType>
+      </DataSourceModuleType>
+      <WriteActionModuleType ID="SCOM.Advanced.MultiHome.AddMG.Rule.WA" Accessibility="Internal" Batching="false">
+        <Configuration>
+		  <xsd:element minOccurs="1" name="MGtoADD" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+          <xsd:element minOccurs="1" name="MStoASSIGN" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+          <xsd:element minOccurs="1" name="TimeoutSeconds" type="xsd:integer" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        </Configuration>
+        <OverrideableParameters>
+          <OverrideableParameter ID="MGtoADD" Selector="$Config/MGtoADD$" ParameterType="string" />
+          <OverrideableParameter ID="MStoASSIGN" Selector="$Config/MStoASSIGN$" ParameterType="string" />		  
+          <OverrideableParameter ID="TimeoutSeconds" Selector="$Config/TimeoutSeconds$" ParameterType="int" />
+        </OverrideableParameters>
+        <ModuleImplementation Isolation="Any">
+          <Composite>
+            <MemberModules>
+            <WriteAction ID="WA" TypeID="Windows!Microsoft.Windows.PowerShellWriteAction">
+            <ScriptName>SCOM.Advanced.MultiHome.AddMG.Rule.WA.ps1</ScriptName>
+            <ScriptBody>
+#=================================================================================
+#  Multi-Home Agents to a new SCOM Management Group if not assigned to it yet
+#
+#  Author: Kevin Holman
+#  v1.4
+#=================================================================================
+param([string]$MGtoADD, [string]$MStoASSIGN)
+
+
+# Manual Testing section - put stuff here for manually testing script - typically parameters:
+#=================================================================================
+# $MGtoADD = "PROD"
+# $MStoASSIGN = "foo.domain.com"
+#=================================================================================
+
+
+# Constants section - modify stuff here:
+#=================================================================================
+# Assign script name variable for use in event logging.  
+$ScriptName = "SCOM.Advanced.MultiHome.AddMG.Rule.WA.ps1"
+$EventID = "7502"
+#=================================================================================
+
+
+# Starting Script section - All scripts get this
+#=================================================================================
+# Gather the start time of the script
+$StartTime = Get-Date
+#Set variable to be used in logging events
+$whoami = whoami
+# Load MOMScript API
+$momapi = New-Object -comObject MOM.ScriptAPI
+#Log script event that we are starting task
+$momapi.LogScriptEvent($ScriptName,$EventID,0,"`n Script is starting. `n Running as ($whoami). `n Parameters passed: `n MG to ADD: ($MGtoADD). `n MS to ASSIGN: ($MStoASSIGN).")
+#=================================================================================
+
+
+# Begin MAIN script section
+#=================================================================================
+# Load Agent Scripting Module
+$AgentCfg = New-Object -ComObject "AgentConfigManager.MgmtSvcCfg"
+
+IF ($Error)
+{
+  #Error loading agent scripting object
+}
+			
+# Get Agent Management groups 
+$MGs = $AgentCfg.GetManagementGroups()
+
+IF (!($MGs))
+{
+  #No management groups were gathered.  Something broke.  Log critical event and terminate
+  $momapi.LogScriptEvent($ScriptName,$EventID,1,"`n FATAL ERROR:  No management groups were found on this agent, which means a scripting error. `n Terminating script.")
+  EXIT
+}
+
+[array]$MGListArr = @()
+[string]$MGListStr = ""
+
+#Loop through each and create an array and comma seperated list
+foreach ($MG in $MGs)
+{
+  $AgentMGName = $MG.managementGroupName.ToUpper()
+  $MGListArr = $MGListArr + $AgentMGName
+  $MGListStr = $MGListStr + $AgentMGName + ", "
+}
+$MGlistStr = $MGlistStr.TrimEnd(", ")
+
+
+IF ($MGListArr -notcontains $MGtoADD)
+{
+  #The agent is not multi-homed yet.  Multihome it.
+  #Check to see how many management groups are already homed.
+  $MGListCount = $MGListArr.Count
+  IF ($MGListCount -ge 4)
+  {
+    #The agent is already multihomed to 4 management groups  Log a bad event and output the names of the MGs
+    $momapi.LogScriptEvent($ScriptName,$EventID,1,"`n FATAL ERROR:  4 Management Groups are already homed to this agent.  No more can be added. `n Terminating script.")
+    EXIT
+  }
+  ELSE
+  {
+    $momapi.LogScriptEvent($ScriptName,$EventID,0,"`n Multihoming this agent to MG: ($MGtoADD) and MS: ($MStoASSIGN).")
+    $AgentCfg.AddManagementGroup($MGtoADD,$MStoASSIGN,5723)
+    $RestartRequired = $true
+  }
+}
+ELSE
+{
+  #The agent is already multihomed to the intended management group. Do nothing. Log event.
+  $momapi.LogScriptEvent($ScriptName,$EventID,0,"`n This agent is already multihomed to Management Group: ($MGtoADD). `n The MG List on this agent is: ($MGlistStr). `n No changes will be made.")
+}
+#=================================================================================
+# End MAIN script section
+
+
+# End of script section
+#=================================================================================
+#Log an event for script ending and total execution time.
+$EndTime = Get-Date
+$ScriptTime = ($EndTime - $StartTime).TotalSeconds
+$momapi.LogScriptEvent($ScriptName,$EventID,0,"`n Script Completed. `n Script Runtime: ($ScriptTime) seconds.")
+#=================================================================================
+
+
+IF ($RestartRequired)
+{
+  # Restart Agent
+  $momapi.LogScriptEvent($ScriptName,$EventID,0,"`n A change to the agent management group membership was made and a restart of the agent is required. `n Restarting now.")
+  #=================================================================================
+  #We need a reliable way to restart the SCOM Agent out of band so that tasks can complete with success
+  $Command = "Start-Sleep -s 5;Restart-Service HealthService"
+  $Process = ([wmiclass]"root\cimv2:Win32_ProcessStartup").CreateInstance()
+  $Process.ShowWindow = 0
+  $Process.CreateFlags = 16777216
+  ([wmiclass]"root\cimv2:Win32_Process").Create("powershell.exe $Command")|Out-Null
+  #=================================================================================
+}
+#End of Script
+            </ScriptBody>
+            <Parameters>
+              <Parameter>
+                <Name>MGtoADD</Name>
+                <Value>$Config/MGtoADD$</Value>
+              </Parameter>
+			  <Parameter>
+                <Name>MStoASSIGN</Name>
+                <Value>$Config/MStoASSIGN$</Value>
+              </Parameter>
+            </Parameters>
+            <TimeoutSeconds>$Config/TimeoutSeconds$</TimeoutSeconds>
+          </WriteAction>
+            </MemberModules>
+            <Composition>
+              <Node ID="WA" />
+            </Composition>
+          </Composite>
+        </ModuleImplementation>
+        <OutputType>System!System.BaseData</OutputType>
+        <InputType>System!System.BaseData</InputType>
+      </WriteActionModuleType>	  
+    </ModuleTypes>	
+  </TypeDefinitions>
+  <Monitoring>
+    <Discoveries>
+      <Discovery ID="SCOM.Advanced.MultiHome.Group1.SQLBased.Group.Discovery" Enabled="true" Target="SC!Microsoft.SystemCenter.AllManagementServersPool" ConfirmDelivery="false" Remotable="true" Priority="Normal">
+        <Category>Discovery</Category>
+        <DiscoveryTypes>
+          <DiscoveryClass TypeID="SCOM.Advanced.MultiHome.Group1.SQLBased.Group" />
+        </DiscoveryTypes>
+        <DataSource ID="DS" TypeID="SCOM.Advanced.MultiHome.SQLBased.Group.Discovery.DataSource">
+          <IntervalSeconds>86400</IntervalSeconds>
+          <SyncTime>20:00</SyncTime>
+          <GroupID>Group1</GroupID>
+          <StartNumber>1</StartNumber>
+          <EndNumber>500</EndNumber>		  
+          <TimeoutSeconds>300</TimeoutSeconds>
+        </DataSource>
+      </Discovery>
+      <Discovery ID="SCOM.Advanced.MultiHome.Group2.SQLBased.Group.Discovery" Enabled="true" Target="SC!Microsoft.SystemCenter.AllManagementServersPool" ConfirmDelivery="false" Remotable="true" Priority="Normal">
+        <Category>Discovery</Category>
+        <DiscoveryTypes>
+          <DiscoveryClass TypeID="SCOM.Advanced.MultiHome.Group2.SQLBased.Group" />
+        </DiscoveryTypes>
+        <DataSource ID="DS" TypeID="SCOM.Advanced.MultiHome.SQLBased.Group.Discovery.DataSource">
+          <IntervalSeconds>86400</IntervalSeconds>
+          <SyncTime>20:05</SyncTime>
+          <GroupID>Group2</GroupID>
+          <StartNumber>501</StartNumber>
+          <EndNumber>1000</EndNumber>		  
+          <TimeoutSeconds>300</TimeoutSeconds>
+        </DataSource>
+      </Discovery>
+      <Discovery ID="SCOM.Advanced.MultiHome.Group3.SQLBased.Group.Discovery" Enabled="true" Target="SC!Microsoft.SystemCenter.AllManagementServersPool" ConfirmDelivery="false" Remotable="true" Priority="Normal">
+        <Category>Discovery</Category>
+        <DiscoveryTypes>
+          <DiscoveryClass TypeID="SCOM.Advanced.MultiHome.Group3.SQLBased.Group" />
+        </DiscoveryTypes>
+        <DataSource ID="DS" TypeID="SCOM.Advanced.MultiHome.SQLBased.Group.Discovery.DataSource">
+          <IntervalSeconds>86400</IntervalSeconds>
+          <SyncTime>20:10</SyncTime>
+          <GroupID>Group3</GroupID>
+          <StartNumber>1001</StartNumber>
+          <EndNumber>1500</EndNumber>		  
+          <TimeoutSeconds>300</TimeoutSeconds>
+        </DataSource>
+      </Discovery>
+      <Discovery ID="SCOM.Advanced.MultiHome.Group4.SQLBased.Group.Discovery" Enabled="true" Target="SC!Microsoft.SystemCenter.AllManagementServersPool" ConfirmDelivery="false" Remotable="true" Priority="Normal">
+        <Category>Discovery</Category>
+        <DiscoveryTypes>
+          <DiscoveryClass TypeID="SCOM.Advanced.MultiHome.Group4.SQLBased.Group" />
+        </DiscoveryTypes>
+        <DataSource ID="DS" TypeID="SCOM.Advanced.MultiHome.SQLBased.Group.Discovery.DataSource">
+          <IntervalSeconds>86400</IntervalSeconds>
+          <SyncTime>20:15</SyncTime>
+          <GroupID>Group4</GroupID>
+          <StartNumber>1501</StartNumber>
+          <EndNumber>2000</EndNumber>		  
+          <TimeoutSeconds>300</TimeoutSeconds>
+        </DataSource>
+      </Discovery>
+      <Discovery ID="SCOM.Advanced.MultiHome.Group5.SQLBased.Group.Discovery" Enabled="true" Target="SC!Microsoft.SystemCenter.AllManagementServersPool" ConfirmDelivery="false" Remotable="true" Priority="Normal">
+        <Category>Discovery</Category>
+        <DiscoveryTypes>
+          <DiscoveryClass TypeID="SCOM.Advanced.MultiHome.Group5.SQLBased.Group" />
+        </DiscoveryTypes>
+        <DataSource ID="DS" TypeID="SCOM.Advanced.MultiHome.SQLBased.Group.Discovery.DataSource">
+          <IntervalSeconds>86400</IntervalSeconds>
+          <SyncTime>20:20</SyncTime>
+          <GroupID>Group5</GroupID>
+          <StartNumber>2001</StartNumber>
+          <EndNumber>2500</EndNumber>		  
+          <TimeoutSeconds>300</TimeoutSeconds>
+        </DataSource>
+      </Discovery>
+      <Discovery ID="SCOM.Advanced.MultiHome.Group6.SQLBased.Group.Discovery" Enabled="true" Target="SC!Microsoft.SystemCenter.AllManagementServersPool" ConfirmDelivery="false" Remotable="true" Priority="Normal">
+        <Category>Discovery</Category>
+        <DiscoveryTypes>
+          <DiscoveryClass TypeID="SCOM.Advanced.MultiHome.Group6.SQLBased.Group" />
+        </DiscoveryTypes>
+        <DataSource ID="DS" TypeID="SCOM.Advanced.MultiHome.SQLBased.Group.Discovery.DataSource">
+          <IntervalSeconds>86400</IntervalSeconds>
+          <SyncTime>20:25</SyncTime>
+          <GroupID>Group6</GroupID>
+          <StartNumber>2501</StartNumber>
+          <EndNumber>3000</EndNumber>		  
+          <TimeoutSeconds>300</TimeoutSeconds>
+        </DataSource>
+      </Discovery>
+      <Discovery ID="SCOM.Advanced.MultiHome.Group7.SQLBased.Group.Discovery" Enabled="true" Target="SC!Microsoft.SystemCenter.AllManagementServersPool" ConfirmDelivery="false" Remotable="true" Priority="Normal">
+        <Category>Discovery</Category>
+        <DiscoveryTypes>
+          <DiscoveryClass TypeID="SCOM.Advanced.MultiHome.Group7.SQLBased.Group" />
+        </DiscoveryTypes>
+        <DataSource ID="DS" TypeID="SCOM.Advanced.MultiHome.SQLBased.Group.Discovery.DataSource">
+          <IntervalSeconds>86400</IntervalSeconds>
+          <SyncTime>20:30</SyncTime>
+          <GroupID>Group7</GroupID>
+          <StartNumber>3001</StartNumber>
+          <EndNumber>3500</EndNumber>		  
+          <TimeoutSeconds>300</TimeoutSeconds>
+        </DataSource>
+      </Discovery>
+      <Discovery ID="SCOM.Advanced.MultiHome.Group8.SQLBased.Group.Discovery" Enabled="true" Target="SC!Microsoft.SystemCenter.AllManagementServersPool" ConfirmDelivery="false" Remotable="true" Priority="Normal">
+        <Category>Discovery</Category>
+        <DiscoveryTypes>
+          <DiscoveryClass TypeID="SCOM.Advanced.MultiHome.Group8.SQLBased.Group" />
+        </DiscoveryTypes>
+        <DataSource ID="DS" TypeID="SCOM.Advanced.MultiHome.SQLBased.Group.Discovery.DataSource">
+          <IntervalSeconds>86400</IntervalSeconds>
+          <SyncTime>20:35</SyncTime>
+          <GroupID>Group8</GroupID>
+          <StartNumber>3501</StartNumber>
+          <EndNumber>4000</EndNumber>		  
+          <TimeoutSeconds>300</TimeoutSeconds>
+        </DataSource>
+      </Discovery>	  
+    </Discoveries>
+    <Rules>
+      <Rule ID="SCOM.Advanced.MultiHome.AddMG.Rule" Enabled="false" Target="SC!Microsoft.SystemCenter.Agent" ConfirmDelivery="true" Remotable="true" Priority="Normal" DiscardLevel="100">
+        <Category>Custom</Category>
+        <DataSources>
+          <DataSource ID="Scheduler" TypeID="System!System.Scheduler">
+            <Scheduler>
+              <SimpleReccuringSchedule>
+                <Interval Unit="Seconds">86400</Interval>
+                <SpreadInitializationOverInterval Unit="Seconds">14400</SpreadInitializationOverInterval>
+              </SimpleReccuringSchedule>
+              <ExcludeDates />
+            </Scheduler>
+          </DataSource>
+        </DataSources>
+        <WriteActions>
+          <WriteAction ID="WA" TypeID="SCOM.Advanced.MultiHome.AddMG.Rule.WA">
+            <MGtoADD>PROD</MGtoADD>		  
+            <MStoASSIGN>servername.domain.com</MStoASSIGN>
+            <TimeoutSeconds>120</TimeoutSeconds>
+          </WriteAction>
+        </WriteActions>
+      </Rule>
+      <Rule ID="SCOM.Advanced.MultiHome.AddMG.AlertOnScriptError.Rule" Enabled="true" Target="SC!Microsoft.SystemCenter.HealthService" ConfirmDelivery="true" Remotable="true" Priority="Normal" DiscardLevel="100">
+        <Category>Alert</Category>
+        <DataSources>
+          <DataSource ID="DS" TypeID="Windows!Microsoft.Windows.EventProvider">
+            <ComputerName>$Target/Host/Property[Type="Windows!Microsoft.Windows.Computer"]/NetworkName$</ComputerName>
+            <LogName>Operations Manager</LogName>
+            <Expression>
+              <And>
+                <Expression>
+                  <RegExExpression>
+                    <ValueExpression>
+                      <XPathQuery Type="UnsignedInteger">EventDisplayNumber</XPathQuery>
+                    </ValueExpression>
+                    <Operator>MatchesRegularExpression</Operator>
+                    <Pattern>^(7501|7502|7503)$</Pattern>
+                  </RegExExpression>
+                </Expression>
+                <Expression>
+                  <SimpleExpression>
+                    <ValueExpression>
+                      <XPathQuery Type="String">PublisherName</XPathQuery>
+                    </ValueExpression>
+                    <Operator>Equal</Operator>
+                    <ValueExpression>
+                      <Value Type="String">Health Service Script</Value>
+                    </ValueExpression>
+                  </SimpleExpression>
+                </Expression>
+                <Expression>
+                  <RegExExpression>
+                    <ValueExpression>
+                      <XPathQuery Type="Integer">EventLevel</XPathQuery>
+                    </ValueExpression>
+                    <Operator>MatchesRegularExpression</Operator>
+                    <Pattern>^(1|2)$</Pattern>
+                  </RegExExpression>
+                </Expression>
+              </And>
+            </Expression>
+          </DataSource>
+        </DataSources>
+        <WriteActions>
+          <WriteAction ID="Alert" TypeID="Health!System.Health.GenerateAlert">
+            <Priority>1</Priority>
+            <Severity>1</Severity>
+            <AlertName />
+            <AlertDescription />
+            <AlertOwner />
+            <AlertMessageId>$MPElement[Name="SCOM.Advanced.MultiHome.AddMG.AlertOnScriptError.Rule.AlertMessage"]$</AlertMessageId>
+            <AlertParameters>
+              <AlertParameter1>$Data[Default='']/EventDescription$</AlertParameter1>
+            </AlertParameters>
+            <Suppression />
+            <Custom1 />
+            <Custom2 />
+            <Custom3 />
+            <Custom4 />
+            <Custom5 />
+            <Custom6 />
+            <Custom7 />
+            <Custom8 />
+            <Custom9 />
+            <Custom10 />
+          </WriteAction>
+        </WriteActions>
+      </Rule>	  
+    </Rules>
+  </Monitoring>
+  <Presentation>
+    <StringResources>
+      <StringResource ID="SCOM.Advanced.MultiHome.AddMG.AlertOnScriptError.Rule.AlertMessage" />
+    </StringResources>  
+  </Presentation>  
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="SCOM.Advanced.MultiHome">
+          <Name>SCOM MultiHome</Name>
+          <Description />
+        </DisplayString>
+        <DisplayString ElementID="SCOM.Advanced.MultiHome.AddMG.AlertOnScriptError.Rule">
+          <Name>SCOM MultiHome AddMG Script Error Rule</Name>
+        </DisplayString>
+        <DisplayString ElementID="SCOM.Advanced.MultiHome.AddMG.AlertOnScriptError.Rule.AlertMessage">
+          <Name>Error running a SCOM MultiHome AddMG Script</Name>
+          <Description>Event Description: {0}</Description>
+        </DisplayString>			
+	    <DisplayString ElementID="SCOM.Advanced.MultiHome.Group1.SQLBased.Group">
+          <Name>SCOM MultiHome Group1 SQLQueryBased Group</Name>
+        </DisplayString>
+	    <DisplayString ElementID="SCOM.Advanced.MultiHome.Group2.SQLBased.Group">
+          <Name>SCOM MultiHome Group2 SQLQueryBased Group</Name>
+        </DisplayString>
+	    <DisplayString ElementID="SCOM.Advanced.MultiHome.Group3.SQLBased.Group">
+          <Name>SCOM MultiHome Group3 SQLQueryBased Group</Name>
+        </DisplayString>
+	    <DisplayString ElementID="SCOM.Advanced.MultiHome.Group4.SQLBased.Group">
+          <Name>SCOM MultiHome Group4 SQLQueryBased Group</Name>
+        </DisplayString>
+	    <DisplayString ElementID="SCOM.Advanced.MultiHome.Group5.SQLBased.Group">
+          <Name>SCOM MultiHome Group5 SQLQueryBased Group</Name>
+        </DisplayString>
+	    <DisplayString ElementID="SCOM.Advanced.MultiHome.Group6.SQLBased.Group">
+          <Name>SCOM MultiHome Group6 SQLQueryBased Group</Name>
+        </DisplayString>
+	    <DisplayString ElementID="SCOM.Advanced.MultiHome.Group7.SQLBased.Group">
+          <Name>SCOM MultiHome Group7 SQLQueryBased Group</Name>
+        </DisplayString>
+	    <DisplayString ElementID="SCOM.Advanced.MultiHome.Group8.SQLBased.Group">
+          <Name>SCOM MultiHome Group8 SQLQueryBased Group</Name>
+        </DisplayString>		
+        <DisplayString ElementID="SCOM.Advanced.MultiHome.Group1.SQLBased.Group.Discovery">
+          <Name>SCOM MultiHome Group1 SQLQueryBased Group Discovery</Name>
+          <Description>This discovery rule populates a group of Windows Computer Objects that are returned from a SQL query</Description>
+        </DisplayString>
+        <DisplayString ElementID="SCOM.Advanced.MultiHome.Group2.SQLBased.Group.Discovery">
+          <Name>SCOM MultiHome Group2 SQLQueryBased Group Discovery</Name>
+          <Description>This discovery rule populates a group of Windows Computer Objects that are returned from a SQL query</Description>
+        </DisplayString>
+        <DisplayString ElementID="SCOM.Advanced.MultiHome.Group3.SQLBased.Group.Discovery">
+          <Name>SCOM MultiHome Group3 SQLQueryBased Group Discovery</Name>
+          <Description>This discovery rule populates a group of Windows Computer Objects that are returned from a SQL query</Description>
+        </DisplayString>
+        <DisplayString ElementID="SCOM.Advanced.MultiHome.Group4.SQLBased.Group.Discovery">
+          <Name>SCOM MultiHome Group4 SQLQueryBased Group Discovery</Name>
+          <Description>This discovery rule populates a group of Windows Computer Objects that are returned from a SQL query</Description>
+        </DisplayString>
+        <DisplayString ElementID="SCOM.Advanced.MultiHome.Group5.SQLBased.Group.Discovery">
+          <Name>SCOM MultiHome Group5 SQLQueryBased Group Discovery</Name>
+          <Description>This discovery rule populates a group of Windows Computer Objects that are returned from a SQL query</Description>
+        </DisplayString>
+        <DisplayString ElementID="SCOM.Advanced.MultiHome.Group6.SQLBased.Group.Discovery">
+          <Name>SCOM MultiHome Group6 SQLQueryBased Group Discovery</Name>
+          <Description>This discovery rule populates a group of Windows Computer Objects that are returned from a SQL query</Description>
+        </DisplayString>	
+        <DisplayString ElementID="SCOM.Advanced.MultiHome.Group7.SQLBased.Group.Discovery">
+          <Name>SCOM MultiHome Group7 SQLQueryBased Group Discovery</Name>
+          <Description>This discovery rule populates a group of Windows Computer Objects that are returned from a SQL query</Description>
+        </DisplayString>	
+        <DisplayString ElementID="SCOM.Advanced.MultiHome.Group8.SQLBased.Group.Discovery">
+          <Name>SCOM MultiHome Group8 SQLQueryBased Group Discovery</Name>
+          <Description>This discovery rule populates a group of Windows Computer Objects that are returned from a SQL query</Description>
+        </DisplayString>			
+        <DisplayString ElementID="SCOM.Advanced.MultiHome.AddMG.Rule">
+          <Name>SCOM MultiHome Agent to Additional Management Group Rule</Name>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPack>
