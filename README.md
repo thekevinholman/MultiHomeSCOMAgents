@@ -1,4 +1,4 @@
-# MultiHomeSCOMAgents 1.0.0.5
+# SCOM.MultiHome 1.0.1.0
 
 ## [Download Here][Download]
 
