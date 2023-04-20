@@ -2,7 +2,7 @@
   <Manifest>
     <Identity>
       <ID>SCOM.MultiHome</ID>
-      <Version>1.0.1.0</Version>
+      <Version>1.0.1.2</Version>
     </Identity>
     <Name>SCOM.MultiHome</Name>
     <References>
@@ -296,7 +296,7 @@ IF ($RestartRequired)
   </TypeDefinitions>
   <Monitoring>
     <Discoveries>  
-      <Discovery ID="SCOM.MultiHome.GW1.Group.Discovery" Enabled="true" Target="SCOM.MultiHome.GW1.Group" ConfirmDelivery="false" Remotable="true" Priority="Normal">
+      <Discovery ID="SCOM.MultiHome.GW1.Group.Discovery" Enabled="false" Target="SCOM.MultiHome.GW1.Group" ConfirmDelivery="false" Remotable="true" Priority="Normal">
         <Category>Discovery</Category>
         <DiscoveryTypes>
           <DiscoveryClass TypeID="SCOM.MultiHome.GW1.Group" />
@@ -370,7 +370,7 @@ IF ($Error)
 # Begin MAIN script section
 #=================================================================================
 #Get the gateway object
-$Gateway = Get-SCOMManagementServer | where {$_.Name –match $GWNetBIOSName}
+$Gateway = Get-SCOMManagementServer | where {$_.ComputerName –eq $GWNetBIOSName}
 $Agents = Get-SCOMAgent -ManagementServer $Gateway
 
 ###Discovery Section
@@ -444,7 +444,7 @@ $momapi.LogScriptEvent($ScriptName,$EventID,0,"`n Script Ending. `n Script Runti
       <Discovery ID="SCOM.MultiHome.GW2.Group.Discovery" Enabled="false" Target="SCOM.MultiHome.GW2.Group" ConfirmDelivery="false" Remotable="true" Priority="Normal">
         <Category>Discovery</Category>
         <DiscoveryTypes>
-          <DiscoveryClass TypeID="SCOM.MultiHome.GW1.Group" />
+          <DiscoveryClass TypeID="SCOM.MultiHome.GW2.Group" />
         </DiscoveryTypes>
         <DataSource ID="DS" TypeID="Windows!Microsoft.Windows.TimedPowerShell.DiscoveryProvider">
           <IntervalSeconds>86331</IntervalSeconds>
@@ -515,7 +515,7 @@ IF ($Error)
 # Begin MAIN script section
 #=================================================================================
 #Get the gateway object
-$Gateway = Get-SCOMManagementServer | where {$_.Name –match $GWNetBIOSName}
+$Gateway = Get-SCOMManagementServer | where {$_.ComputerName –eq $GWNetBIOSName}
 $Agents = Get-SCOMAgent -ManagementServer $Gateway
 
 ###Discovery Section
@@ -533,7 +533,7 @@ FOREACH ($Agent in $Agents)
 {
   [string]$AgentName = $Agent.Name
   $i = $i+1
-  $ServerInstance = $DiscoveryData.CreateClassInstance("$MPElement[Name='Windows!Microsoft.Windows.Computer']$")
+  $ServerInstance = $DiscoveryData.CreateClassInstance("$MPElement[Name='SC!Microsoft.SystemCenter.Agent']$")
   $ServerInstance.AddProperty("$MPElement[Name='Windows!Microsoft.Windows.Computer']/PrincipalName$", $AgentName) 
   $RelationshipInstance = $DiscoveryData.CreateRelationshipInstance("$MPElement[Name='SCOM.MultiHome.GW2.Group.Contains.Agents']$")
   $RelationshipInstance.Source = $GroupInstance
@@ -660,7 +660,7 @@ IF ($Error)
 # Begin MAIN script section
 #=================================================================================
 #Get the gateway object
-$Gateway = Get-SCOMManagementServer | where {$_.Name –match $GWNetBIOSName}
+$Gateway = Get-SCOMManagementServer | where {$_.ComputerName –eq $GWNetBIOSName}
 $Agents = Get-SCOMAgent -ManagementServer $Gateway
 
 ###Discovery Section
@@ -678,7 +678,7 @@ FOREACH ($Agent in $Agents)
 {
   [string]$AgentName = $Agent.Name
   $i = $i+1
-  $ServerInstance = $DiscoveryData.CreateClassInstance("$MPElement[Name='Windows!Microsoft.Windows.Computer']$")
+  $ServerInstance = $DiscoveryData.CreateClassInstance("$MPElement[Name='SC!Microsoft.SystemCenter.Agent']$")
   $ServerInstance.AddProperty("$MPElement[Name='Windows!Microsoft.Windows.Computer']/PrincipalName$", $AgentName) 
   $RelationshipInstance = $DiscoveryData.CreateRelationshipInstance("$MPElement[Name='SCOM.MultiHome.GW3.Group.Contains.Agents']$")
   $RelationshipInstance.Source = $GroupInstance
@@ -805,7 +805,7 @@ IF ($Error)
 # Begin MAIN script section
 #=================================================================================
 #Get the gateway object
-$Gateway = Get-SCOMManagementServer | where {$_.Name –match $GWNetBIOSName}
+$Gateway = Get-SCOMManagementServer | where {$_.ComputerName –eq $GWNetBIOSName}
 $Agents = Get-SCOMAgent -ManagementServer $Gateway
 
 ###Discovery Section
@@ -823,7 +823,7 @@ FOREACH ($Agent in $Agents)
 {
   [string]$AgentName = $Agent.Name
   $i = $i+1
-  $ServerInstance = $DiscoveryData.CreateClassInstance("$MPElement[Name='Windows!Microsoft.Windows.Computer']$")
+  $ServerInstance = $DiscoveryData.CreateClassInstance("$MPElement[Name='SC!Microsoft.SystemCenter.Agent']$")
   $ServerInstance.AddProperty("$MPElement[Name='Windows!Microsoft.Windows.Computer']/PrincipalName$", $AgentName) 
   $RelationshipInstance = $DiscoveryData.CreateRelationshipInstance("$MPElement[Name='SCOM.MultiHome.GW4.Group.Contains.Agents']$")
   $RelationshipInstance.Source = $GroupInstance
@@ -950,7 +950,7 @@ IF ($Error)
 # Begin MAIN script section
 #=================================================================================
 #Get the gateway object
-$Gateway = Get-SCOMManagementServer | where {$_.Name –match $GWNetBIOSName}
+$Gateway = Get-SCOMManagementServer | where {$_.ComputerName –eq $GWNetBIOSName}
 $Agents = Get-SCOMAgent -ManagementServer $Gateway
 
 ###Discovery Section
@@ -968,7 +968,7 @@ FOREACH ($Agent in $Agents)
 {
   [string]$AgentName = $Agent.Name
   $i = $i+1
-  $ServerInstance = $DiscoveryData.CreateClassInstance("$MPElement[Name='Windows!Microsoft.Windows.Computer']$")
+  $ServerInstance = $DiscoveryData.CreateClassInstance("$MPElement[Name='SC!Microsoft.SystemCenter.Agent']$")
   $ServerInstance.AddProperty("$MPElement[Name='Windows!Microsoft.Windows.Computer']/PrincipalName$", $AgentName) 
   $RelationshipInstance = $DiscoveryData.CreateRelationshipInstance("$MPElement[Name='SCOM.MultiHome.GW5.Group.Contains.Agents']$")
   $RelationshipInstance.Source = $GroupInstance
@@ -1095,7 +1095,7 @@ IF ($Error)
 # Begin MAIN script section
 #=================================================================================
 #Get the gateway object
-$Gateway = Get-SCOMManagementServer | where {$_.Name –match $GWNetBIOSName}
+$Gateway = Get-SCOMManagementServer | where {$_.ComputerName –eq $GWNetBIOSName}
 $Agents = Get-SCOMAgent -ManagementServer $Gateway
 
 ###Discovery Section
@@ -1113,7 +1113,7 @@ FOREACH ($Agent in $Agents)
 {
   [string]$AgentName = $Agent.Name
   $i = $i+1
-  $ServerInstance = $DiscoveryData.CreateClassInstance("$MPElement[Name='Windows!Microsoft.Windows.Computer']$")
+  $ServerInstance = $DiscoveryData.CreateClassInstance("$MPElement[Name='SC!Microsoft.SystemCenter.Agent']$")
   $ServerInstance.AddProperty("$MPElement[Name='Windows!Microsoft.Windows.Computer']/PrincipalName$", $AgentName) 
   $RelationshipInstance = $DiscoveryData.CreateRelationshipInstance("$MPElement[Name='SCOM.MultiHome.GW6.Group.Contains.Agents']$")
   $RelationshipInstance.Source = $GroupInstance
@@ -1240,7 +1240,7 @@ IF ($Error)
 # Begin MAIN script section
 #=================================================================================
 #Get the gateway object
-$Gateway = Get-SCOMManagementServer | where {$_.Name –match $GWNetBIOSName}
+$Gateway = Get-SCOMManagementServer | where {$_.ComputerName –eq $GWNetBIOSName}
 $Agents = Get-SCOMAgent -ManagementServer $Gateway
 
 ###Discovery Section
@@ -1258,7 +1258,7 @@ FOREACH ($Agent in $Agents)
 {
   [string]$AgentName = $Agent.Name
   $i = $i+1
-  $ServerInstance = $DiscoveryData.CreateClassInstance("$MPElement[Name='Windows!Microsoft.Windows.Computer']$")
+  $ServerInstance = $DiscoveryData.CreateClassInstance("$MPElement[Name='SC!Microsoft.SystemCenter.Agent']$")
   $ServerInstance.AddProperty("$MPElement[Name='Windows!Microsoft.Windows.Computer']/PrincipalName$", $AgentName) 
   $RelationshipInstance = $DiscoveryData.CreateRelationshipInstance("$MPElement[Name='SCOM.MultiHome.GW7.Group.Contains.Agents']$")
   $RelationshipInstance.Source = $GroupInstance
@@ -1385,7 +1385,7 @@ IF ($Error)
 # Begin MAIN script section
 #=================================================================================
 #Get the gateway object
-$Gateway = Get-SCOMManagementServer | where {$_.Name –match $GWNetBIOSName}
+$Gateway = Get-SCOMManagementServer | where {$_.ComputerName –eq $GWNetBIOSName}
 $Agents = Get-SCOMAgent -ManagementServer $Gateway
 
 ###Discovery Section
@@ -1403,7 +1403,7 @@ FOREACH ($Agent in $Agents)
 {
   [string]$AgentName = $Agent.Name
   $i = $i+1
-  $ServerInstance = $DiscoveryData.CreateClassInstance("$MPElement[Name='Windows!Microsoft.Windows.Computer']$")
+  $ServerInstance = $DiscoveryData.CreateClassInstance("$MPElement[Name='SC!Microsoft.SystemCenter.Agent']$")
   $ServerInstance.AddProperty("$MPElement[Name='Windows!Microsoft.Windows.Computer']/PrincipalName$", $AgentName) 
   $RelationshipInstance = $DiscoveryData.CreateRelationshipInstance("$MPElement[Name='SCOM.MultiHome.GW8.Group.Contains.Agents']$")
   $RelationshipInstance.Source = $GroupInstance
@@ -1530,7 +1530,7 @@ IF ($Error)
 # Begin MAIN script section
 #=================================================================================
 #Get the gateway object
-$Gateway = Get-SCOMManagementServer | where {$_.Name –match $GWNetBIOSName}
+$Gateway = Get-SCOMManagementServer | where {$_.ComputerName –eq $GWNetBIOSName}
 $Agents = Get-SCOMAgent -ManagementServer $Gateway
 
 ###Discovery Section
@@ -1548,7 +1548,7 @@ FOREACH ($Agent in $Agents)
 {
   [string]$AgentName = $Agent.Name
   $i = $i+1
-  $ServerInstance = $DiscoveryData.CreateClassInstance("$MPElement[Name='Windows!Microsoft.Windows.Computer']$")
+  $ServerInstance = $DiscoveryData.CreateClassInstance("$MPElement[Name='SC!Microsoft.SystemCenter.Agent']$")
   $ServerInstance.AddProperty("$MPElement[Name='Windows!Microsoft.Windows.Computer']/PrincipalName$", $AgentName) 
   $RelationshipInstance = $DiscoveryData.CreateRelationshipInstance("$MPElement[Name='SCOM.MultiHome.GW9.Group.Contains.Agents']$")
   $RelationshipInstance.Source = $GroupInstance
@@ -1675,7 +1675,7 @@ IF ($Error)
 # Begin MAIN script section
 #=================================================================================
 #Get the gateway object
-$Gateway = Get-SCOMManagementServer | where {$_.Name –match $GWNetBIOSName}
+$Gateway = Get-SCOMManagementServer | where {$_.ComputerName –eq $GWNetBIOSName}
 $Agents = Get-SCOMAgent -ManagementServer $Gateway
 
 ###Discovery Section
@@ -1693,7 +1693,7 @@ FOREACH ($Agent in $Agents)
 {
   [string]$AgentName = $Agent.Name
   $i = $i+1
-  $ServerInstance = $DiscoveryData.CreateClassInstance("$MPElement[Name='Windows!Microsoft.Windows.Computer']$")
+  $ServerInstance = $DiscoveryData.CreateClassInstance("$MPElement[Name='SC!Microsoft.SystemCenter.Agent']$")
   $ServerInstance.AddProperty("$MPElement[Name='Windows!Microsoft.Windows.Computer']/PrincipalName$", $AgentName) 
   $RelationshipInstance = $DiscoveryData.CreateRelationshipInstance("$MPElement[Name='SCOM.MultiHome.GW10.Group.Contains.Agents']$")
   $RelationshipInstance.Source = $GroupInstance
